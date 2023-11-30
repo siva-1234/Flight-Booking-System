@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import dbConnect from "./db/db.js";
+import { Register } from "./controllers/UserController.js";
 //---------------------------------------
 
 const app = express();
@@ -30,6 +31,12 @@ app.use(cookieParser());
 app.get("/", (req, res) => {
   res.send("Flight Booking App");
 });
+
+//---------------------------------------
+
+app.post("/", Register);
+
+
 //---------------------------------------
 dbConnect(username, password);
 
