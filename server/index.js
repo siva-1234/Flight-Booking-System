@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import dbConnect from "./db/db.js";
 import { Register } from "./controllers/UserController.js";
+import { Flights } from "./controllers/Flights.js";
 //---------------------------------------
 
 const app = express();
@@ -34,7 +35,8 @@ app.get("/", (req, res) => {
 
 //---------------------------------------
 
-app.post("/", Register);
+app.post("/signup", Register);
+app.post("/flights", Flights);
 
 
 //---------------------------------------

@@ -2,11 +2,9 @@ import User from "../schema/UserSchema.js";
 
 export const Register = async (req, res) => {
   try {
-    // const { number, password } = req.body;
-    const email = req.body.email;
-    
-
-    const existingUser = await User.findOne({ email });
+    const number = req.body.number;
+  
+    const existingUser = await User.findOne({ number });
     if (existingUser) {
       res.status(401).send({ message: "Mobile Number already registered" });
     }

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const UserSchema = mongoose.Schema({
-  email: String,
+  number: String || Number,
 });
 
 const User = mongoose.model("Flight User", UserSchema);
